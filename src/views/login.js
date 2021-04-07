@@ -1,6 +1,6 @@
 // @ts-nocheck
 import React, { useState, useEffect } from 'react'
-import { useHistory } from 'react-router-dom'
+import { useHistory, useParams } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { postLogin } from '../actions/login'
 import { Link } from 'react-router-dom'
@@ -16,6 +16,7 @@ import Loader from '../components/loader'
 
 const Login = () => {
   const history = useHistory()
+  const params = useParams()
   const dispatch = useDispatch()
   const [errorMessageLogin, setErrorMessageLogin] = useState('')
   const [errorMessageChamps, setErrorMessageChamps] = useState('')
@@ -48,9 +49,17 @@ const Login = () => {
         .then(res => {
           localStorage.setItem('token', res.headers['auth-token'])
           setIsLoader(true)
-          history.push({
-            pathname: '/'
-          })
+          // window.history.back()
+
+          if (params.name[1]) {
+            history.push({
+              pathname: `/programme/${params.name[1]}`
+            })
+          } else {
+            history.push({
+              pathname: `/`
+            })
+          }
         })
         .catch(err => {
           setErrorMessageLogin('Email ou mot de passe incorrect')

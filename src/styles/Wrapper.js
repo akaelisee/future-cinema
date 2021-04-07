@@ -108,7 +108,7 @@ const Wrapper = styled.div`
     display: flex;
 
     .wrapper__pro__image {
-      width: 300px;
+      width: 520px;
       img {
         width: 100%;
       }
@@ -187,7 +187,7 @@ const Wrapper = styled.div`
     /* Programmes */
     .wrapper__pro {
       .wrapper__pro__image {
-        width: 400px;
+        width: 600px;
       }
 
       .wrapper__pro__detail {
@@ -220,7 +220,7 @@ const Wrapper = styled.div`
       display: flex;
 
       .wrapper__pro__image {
-        width: 500px;
+        width: 750px;
       }
 
       .wrapper__pro__detail {

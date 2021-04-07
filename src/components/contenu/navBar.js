@@ -18,7 +18,7 @@ const NavBar = ({ login, isNav }) => {
 
   const deconnexion = () => {
     const token = localStorage.removeItem('token')
-    if (!token) window.history.back()
+    if (!token) window.location.reload()
   }
 
   const userFuncScreen = () => {
@@ -27,7 +27,7 @@ const NavBar = ({ login, isNav }) => {
     if (!token) {
       return (
         <div className='link'>
-          <Link to='/login'> Se connecter</Link>
+          <Link to='/?/login'> Se connecter</Link>
           <Link to='/register'> S&lsquo;incrire</Link>
         </div>
       )
@@ -75,7 +75,7 @@ const NavBar = ({ login, isNav }) => {
               <div className='nav__link'>
                 <Link
                   className='btn-btn'
-                  to='/login'
+                  to='/?/login'
                   onClick={() => setIsUser(false)}
                 >
                   identifiez-vous

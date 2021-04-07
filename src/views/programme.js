@@ -211,7 +211,7 @@ const Programme = ({ login }) => {
         )
       } else {
         history.push({
-          pathname: '/login'
+          pathname: `/?${params?.id}/login`
         })
       }
     }

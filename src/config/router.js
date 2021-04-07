@@ -5,7 +5,6 @@ import PrivateRoute from './privateRoute'
 import Home from '../views/home'
 import Login from '../views/login'
 import Content from '../components/contenu/content'
-import Newletter from '../components/newletter'
 import DetailCinema from '../views/detailCinema'
 import Movie from '../views/movie'
 import Cinema from '../views/cinema'
@@ -18,7 +17,7 @@ const Routes = () => {
     <Router>
       <Switch>
         <PrivateRoute exact path='/register' component={Register} />
-        <PrivateRoute exact path='/login' component={Login} />
+        <PrivateRoute exact path='/:name/login' component={Login} />
         <Content>
           <PrivateRoute exact path='/' component={Home} />
           <PrivateRoute exact path='/movie' component={Movie} />
@@ -31,7 +30,6 @@ const Routes = () => {
             path='/detail/:name/:id'
             component={DetailCinema}
           />
-          <Newletter />
         </Content>
       </Switch>
     </Router>

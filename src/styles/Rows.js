@@ -18,8 +18,9 @@ const Rows = styled.div`
         grid-template-columns: repeat(auto-fill, minmax(45px, 1fr));
         gap: 5px;
         span {
+          width: 50px;
           text-align: center;
-          padding: 2px 5px;
+          padding: 2px 4px;
           background-color: #ff972f;
           margin-right: 5px;
           box-shadow: 0px 0px 4px 0px #ff972f;
@@ -56,7 +57,7 @@ const Rows = styled.div`
 
   .rows__place {
     margin-left: 80px;
-
+    width: 85%;
     .mult__option {
       width: 90%;
       margin: 0 auto;
@@ -128,7 +129,7 @@ const Rows = styled.div`
     }
 
     .nbre__Place {
-      width: 82%;
+      width: 670px;
       margin: 0 auto;
     }
   }

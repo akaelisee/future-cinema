@@ -123,7 +123,7 @@ const RegisterLogin = () => {
 
           <div style={{ textAlign: 'center' }}>
             <span style={{ fontSize: '14px' }}>
-              Déjà un compte ? <Link to='/login'> Connectez-vous </Link>
+              Déjà un compte ? <Link to='/-/login'> Connectez-vous </Link>
             </span>
           </div>
         </div>

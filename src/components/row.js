@@ -34,27 +34,42 @@ const Row = ({ title, fetchUrl }) => {
   }
   return (
     <Wrapper>
-      <div className='wrapper__title'>
-        <span className='red'> Prochainement </span> à {title}
-      </div>
-      <Card>
-        {movies.map(movie => (
-          <div className='card__movie' key={movie.id}>
-            <div className='card__container'>
-              <Link to={`/programme/${movie.id}`}>
-                <div className='card__espace__image'>
-                  <img
-                    src={movie.poster_path}
-                    className='card__image'
-                    alt='Image'
-                  />
-                </div>
-              </Link>
-            </div>
-            <span className='movie__title'> {movie.movie} </span>
+      {movies.length ? (
+        <>
+          <div className='wrapper__title'>
+            <span className='red'> Prochainement </span> à {title}
           </div>
-        ))}
-      </Card>
+          <Card>
+            {movies.map(movie => (
+              <div className='card__movie' key={movie.id}>
+                <div className='card__container'>
+                  <Link to={`/programme/${movie.id}`}>
+                    <div className='card__espace__image'>
+                      <img
+                        src={movie.poster_path}
+                        className='card__image'
+                        alt='Image'
+                      />
+                    </div>
+                  </Link>
+                </div>
+                <span className='movie__title'> {movie.movie} </span>
+              </div>
+            ))}
+          </Card>
+        </>
+      ) : (
+        <p
+          style={{
+            textAlign: 'center',
+            fontSize: '22px',
+            textTransform: 'uppercase',
+            letterSpacing: '2px'
+          }}
+        >
+          Pas de film actuellment
+        </p>
+      )}
     </Wrapper>
   )
 }

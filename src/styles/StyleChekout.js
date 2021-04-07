@@ -29,7 +29,7 @@ const StyleChekout = styled.div`
     overflow: auto;
 
     .checkout__cart {
-      animation: ${PageLeft} 0.3s;
+      animation: ${PageLeft} 0.1s;
       position: relative;
       padding: 20px 30px;
       background-color: #fff;

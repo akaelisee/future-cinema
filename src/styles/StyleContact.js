@@ -1,33 +1,17 @@
 import styled from 'styled-components'
 
 const StyleContact = styled.div`
-  position: relative;
-  z-index: 2;
   .col__text {
-    position: absolute;
-    top: 20%;
-    right: 13%;
-    .text {
-      font-size: 45px;
-      color: #071120;
-      text-transform: uppercase;
-      line-height: 56px;
-      letter-spacing: 5px;
-      margin-bottom: 15px;
-    }
-    .sous__text {
-      font-size: 30px;
-      color: #071120;
-      text-transform: uppercase;
-      text-align: center;
-      margin-bottom: 35px;
-      line-height: 30px;
-      letter-spacing: 1.8px;
-    }
+    font-size: 35px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin: 15px 0;
+    text-align: center;
   }
 
   .form {
-    width: 60%;
+    width: 70%;
     margin: 65px auto;
     .form__card {
       padding: 25px 0;
