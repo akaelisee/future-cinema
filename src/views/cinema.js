@@ -1,6 +1,5 @@
 // @ts-nocheck
-import React, { useEffect } from 'react'
-import axios from 'axios'
+import React from 'react'
 import Container from '../styles/Container'
 import RowSalle from '../components/rowSalle'
 import Wrapper from '../styles/Wrapper'

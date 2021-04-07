@@ -4,12 +4,9 @@ import axios from 'axios'
 import { useParams, useHistory } from 'react-router-dom'
 import Wrapper from '../styles/Wrapper'
 import styled from 'styled-components'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faClock } from '@fortawesome/free-solid-svg-icons'
-import play from '../assets/svg/play-outline.svg'
 import Rows from '../styles/Rows'
 import PropTypes from 'prop-types'
-import { connect, useDispatch } from 'react-redux'
+import { connect } from 'react-redux'
 import Banner from '../components/programme/banner'
 import DetailProgramme from '../components/programme/detailProgramme'
 import Cart from '../components/programme/cart'
@@ -17,6 +14,7 @@ import InfoPlace from '../components/programme/infoPlace'
 import Checkout from '../components/checkout'
 import { Elements } from '@stripe/react-stripe-js'
 import { loadStripe } from '@stripe/stripe-js'
+import Loader from '../components/loader'
 
 const Programme = ({ login }) => {
   const params = useParams()
@@ -25,9 +23,10 @@ const Programme = ({ login }) => {
   const [programmeSelected, setProgrammeSelected] = useState('')
   const [placeSelected, setPlaceselected] = useState([])
   const [client, setClient] = useState(login.id)
-  const [isExist, setIsExist] = useState(false)
+  const [isHide, setIsHide] = useState(false)
   const [isExistCart, setIsExistCart] = useState(false)
   const [placeSold, setPlaceSold] = useState([])
+  const [isLoader, setIsLoader] = useState(false)
   const stripePromise = loadStripe(process.env.REACT_APP_KEY)
   const request = 'http://localhost:4000/admin/account/detail-programme-json'
 
@@ -44,6 +43,11 @@ const Programme = ({ login }) => {
             ...item.place_choisir.split('-').map(it => parseInt(it))
           ])
         })
+        setIsLoader(true)
+        if (isHide) {
+          setIsHide(false)
+          setClient()
+        }
       })
       .catch(err => {
         console.log(err)
@@ -213,6 +217,10 @@ const Programme = ({ login }) => {
     }
   }
 
+  if (!isLoader) {
+    return <Loader />
+  }
+
   return (
     <ContainerPro>
       <div className='detail__programme'>
@@ -246,6 +254,7 @@ const Programme = ({ login }) => {
         </Rows>
         {funcCard()}
       </Wrapper>
+      {/* <p hidden> {setClient('')} </p> */}
     </ContainerPro>
   )
 }

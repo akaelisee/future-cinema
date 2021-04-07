@@ -3,11 +3,7 @@
 import React, { useState } from 'react'
 // import axios from '../services/axios'
 import axios from 'axios'
-import request from '../services/requests'
-import { useHistory } from 'react-router-dom'
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js'
-import { allRemoveCard } from '../actions/cardAction'
-import { useDispatch } from 'react-redux'
 import { LoaderPayement } from './loader'
 import StyleChekout from '../styles/StyleChekout'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -28,8 +24,6 @@ const Checkout = ({
   const element = useElements()
   const token = localStorage.getItem('token')
   const stripe = useStripe()
-  const dispatch = useDispatch()
-  const history = useHistory()
 
   const CARD_ELEMENT_OPTIONS = {
     style: {

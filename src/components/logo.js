@@ -33,19 +33,7 @@ export const Icon = () => {
 }
 
 const LogoImg = styled.div`
-  /* font-family: 'Fraunces', serif;
-  font-weight: 600;
-  color: #44546d;
-  z-index: -1; */
-
   img {
     width: 140px;
   }
-
-  /* @media screen and (max-width: 850px) {
-    font-size: 25px;
-    font-weight: 600;
-    color: #44546d;
-    z-index: -1;
-  } */
 `

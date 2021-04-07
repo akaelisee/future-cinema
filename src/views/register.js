@@ -1,11 +1,9 @@
 // @ts-nocheck
 import React, { useState, useEffect } from 'react'
-import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import { useHistory } from 'react-router-dom'
 // service
-import axios from '../services/axios'
-import request from '../services/requests'
+import axios from 'axios'
 // components
 import Register from '../components/signinOut/registerComponent'
 // image
@@ -19,13 +17,15 @@ const RegisterLogin = () => {
   const history = useHistory()
 
   const [errorMessage, setErrorMessage] = useState('')
-  const [isExist, setIsExist] = useState(false)
   const [errorMessageEmail, setErrorMessageEmail] = useState('')
   const [messageValidate, setMessageValidate] = useState('')
   const [isLoader, setIsLoader] = useState(false)
   const [isHide, setIsHide] = useState(false)
 
-  useEffect(() => {}, [])
+  useEffect(() => {
+    const token = localStorage.getItem('token')
+    if (token) history.push({ pathname: '/' })
+  }, [])
 
   // Register
   const submitRegister = (e, formRegister, setIsError) => {
@@ -69,6 +69,7 @@ const RegisterLogin = () => {
           history.push({
             pathname: '/login'
           })
+          setIsLoader(true)
           if (isHide) {
             setIsHide(false)
             console.log(res)
@@ -88,7 +89,7 @@ const RegisterLogin = () => {
   }
 
   if (isLoader) {
-    return
+    return <Loader />
   }
 
   return !isLoader ? (
@@ -131,11 +132,6 @@ const RegisterLogin = () => {
   ) : (
     <Loader />
   )
-}
-
-RegisterLogin.propTypes = {
-  isComponentExist: PropTypes.bool,
-  setIsComponentExist: PropTypes.func
 }
 
 export default RegisterLogin

@@ -1,13 +1,10 @@
 // @ts-nocheck
 import React, { useState, useEffect } from 'react'
-import { useHistory, useParams } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { postLogin } from '../actions/login'
-import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 // service
-import axios from '../services/axios'
-import request from '../services/requests'
 // components
 import LoginComponent from '../components/signinOut/loginComponent'
 // image
@@ -20,13 +17,15 @@ import Loader from '../components/loader'
 const Login = () => {
   const history = useHistory()
   const dispatch = useDispatch()
-  const [errorMessageEmail, setErrorMessageEmail] = useState('')
   const [errorMessageLogin, setErrorMessageLogin] = useState('')
   const [errorMessageChamps, setErrorMessageChamps] = useState('')
   const [isLoader, setIsLoader] = useState(false)
   const [isHide, setIsHide] = useState(false)
 
-  useEffect(() => {}, [])
+  useEffect(() => {
+    const token = localStorage.getItem('token')
+    if (token) history.push({ pathname: '/' })
+  }, [])
   // login
   const submitLogin = (e, formLogin) => {
     e.preventDefault()
@@ -48,11 +47,10 @@ const Login = () => {
       dispatch(postLogin(data))
         .then(res => {
           localStorage.setItem('token', res.headers['auth-token'])
-          console.log(res)
+          setIsLoader(true)
           history.push({
             pathname: '/'
           })
-          setIsLoader(true)
         })
         .catch(err => {
           setErrorMessageLogin('Email ou mot de passe incorrect')
@@ -67,7 +65,7 @@ const Login = () => {
   }
 
   if (isLoader) {
-    return
+    return <Loader />
   }
 
   return !isLoader ? (
@@ -110,11 +108,6 @@ const Login = () => {
   ) : (
     <Loader />
   )
-}
-
-Login.propTypes = {
-  isComponentExist: PropTypes.bool,
-  setIsComponentExist: PropTypes.func
 }
 
 export default Login

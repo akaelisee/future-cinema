@@ -3,19 +3,22 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Link, useParams } from 'react-router-dom'
 import Container from '../styles/Container'
-import Rows from '../styles/Rows'
 import Card from '../styles/Card'
 import Wrapper from '../styles/Wrapper'
+import { Loader } from '../components/loader'
 
 const DetailCinema = () => {
   const params = useParams()
   const request = 'http://localhost:4000/admin/account/detail-salle-json'
   const [detailSalle, setDetailSalle] = useState([])
+  const [isLoader, setIsLoader] = useState(false)
+
   useEffect(() => {
     axios
       .get(`${request}/${params?.id}`)
       .then(res => {
         setDetailSalle(res.data.results)
+        setIsLoader(true)
       })
       .catch(err => {
         console.log(err)
@@ -24,6 +27,10 @@ const DetailCinema = () => {
 
   const name = () => {
     return params.name[0].toUpperCase() + params.name.slice(1).replace('-', ' ')
+  }
+
+  if (!isLoader) {
+    return <Loader />
   }
 
   return (

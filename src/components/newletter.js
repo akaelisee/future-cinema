@@ -2,8 +2,7 @@
 import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
-import axios from '../services/axios'
-import request from '../services/requests'
+import axios from 'axios'
 // component
 import SkillsLink from './skillsLink'
 // style
@@ -24,7 +23,7 @@ const Newletter = () => {
     }
     try {
       axios
-        .post(request.fetchNewletter, data)
+        .post('http://localhost:4000/admin/account/subscribe', data)
         .then(res => {
           setIsEmailTrue(`Abonnement réussi`)
           setTimeout(() => {

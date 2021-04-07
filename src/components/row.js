@@ -19,7 +19,6 @@ const Row = ({ title, fetchUrl }) => {
       await axios
         .get(fetchUrl)
         .then(res => {
-          console.log(res)
           setMovies(res.data.results)
           setIsLoader(true)
         })

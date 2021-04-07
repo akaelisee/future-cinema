@@ -1,18 +1,11 @@
 /* eslint-disable react/prop-types */
 import React from 'react'
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect
-} from 'react-router-dom'
+import { BrowserRouter as Router, Switch } from 'react-router-dom'
 import PrivateRoute from './privateRoute'
 import Home from '../views/home'
 import Login from '../views/login'
 import Content from '../components/contenu/content'
 import Newletter from '../components/newletter'
-import NoPage from '../views/404'
-import NoLog from '../views/noLog'
 import DetailCinema from '../views/detailCinema'
 import Movie from '../views/movie'
 import Cinema from '../views/cinema'
@@ -24,16 +17,20 @@ const Routes = () => {
   return (
     <Router>
       <Switch>
-        <Route exact path='/register' component={Register} />
-        <Route exact path='/login' component={Login} />
+        <PrivateRoute exact path='/register' component={Register} />
+        <PrivateRoute exact path='/login' component={Login} />
         <Content>
-          <Route exact path='/' component={Home} />
-          <Route exact path='/movie' component={Movie} />
-          <Route exact path='/salle' component={Cinema} />
-          <Route exact path='/about' component={About} />
-          <Route exact path='/contact' component={Contact} />
-          <Route exact path='/programme/:id' component={Programme} />
-          <Route exact path='/detail/:name/:id' component={DetailCinema} />
+          <PrivateRoute exact path='/' component={Home} />
+          <PrivateRoute exact path='/movie' component={Movie} />
+          <PrivateRoute exact path='/salle' component={Cinema} />
+          <PrivateRoute exact path='/about' component={About} />
+          <PrivateRoute exact path='/contact' component={Contact} />
+          <PrivateRoute exact path='/programme/:id' component={Programme} />
+          <PrivateRoute
+            exact
+            path='/detail/:name/:id'
+            component={DetailCinema}
+          />
           <Newletter />
         </Content>
       </Switch>
