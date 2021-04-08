@@ -1,6 +1,6 @@
 # Project
 
-Un site E-commerce LuxShop
+Un site de reservation de place
 
 ## `Nom et Prenom`
 
@@ -11,11 +11,13 @@ Aka Jean Elisée
 > React, Styled component, Prop-types, Redux, 
 
 ### `Back`
->  NodeJs, Express, Hapi/Joi, Mongoose, MongoDb, Stripe, MailChimp
+>  NodeJs, Express, Hapi/Joi, MySQL, Stripe, MailChimp
 
 ### `Depoyment`
 
-netlify pour le front et Heroku pour le back
+N/A
 
-## `Lien du project`
-Cliquez ici -->  [https://luxshops.netlify.app/](https://luxshops.netlify.app/).
+## `Lancement`
+
+> Faire un Yarn pour installer les packages
+>  yarn start
