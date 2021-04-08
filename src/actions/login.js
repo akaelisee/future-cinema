@@ -1,5 +1,6 @@
 /* eslint-disable no-undef */
-import axios from 'axios'
+import axios from '../services/axios'
+import request from '../services/requests'
 
 export const POST_LOGIN = 'POST_LOGIN'
 
@@ -11,7 +12,7 @@ export const displayLogin = response => ({
 export const postLogin = userObj => dispatch => {
   return new Promise((resolve, reject) => {
     axios
-      .post('http://localhost:4000/admin/account/auth/client/login', userObj)
+      .post(request.fetchLogin, userObj)
       .then(response => {
         dispatch(displayLogin(response.data))
         resolve(response)

@@ -1,6 +1,7 @@
 // @ts-nocheck
 import React, { useState, useEffect } from 'react'
-import axios from 'axios'
+import axios from '../services/axios'
+import request from '../services/requests'
 import { useParams, useHistory } from 'react-router-dom'
 import Wrapper from '../styles/Wrapper'
 import styled from 'styled-components'
@@ -28,11 +29,10 @@ const Programme = ({ login }) => {
   const [placeSold, setPlaceSold] = useState([])
   const [isLoader, setIsLoader] = useState(false)
   const stripePromise = loadStripe(process.env.REACT_APP_KEY)
-  const request = 'http://localhost:4000/admin/account/detail-programme-json'
 
   useEffect(() => {
     axios
-      .get(`${request}/${params?.id}`)
+      .get(`${request.fetchDetailProgramme}/${params?.id}`)
       .then(res => {
         setProgrammes(res.data.programme.results)
         selectedProgramme(res.data.programme.results)

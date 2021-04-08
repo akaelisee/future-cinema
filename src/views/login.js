@@ -49,7 +49,6 @@ const Login = () => {
         .then(res => {
           localStorage.setItem('token', res.headers['auth-token'])
           setIsLoader(true)
-          // window.history.back()
 
           if (params.name[1]) {
             history.push({

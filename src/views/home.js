@@ -1,8 +1,10 @@
 // @ts-nocheck
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
+import request from '../services/requests'
+
 // component
 import RowSalle from '../components/rowSalle'
 import Row from '../components/row'
@@ -15,15 +17,10 @@ import salle5 from '../assets/img/salle5.jpg'
 import salle2 from '../assets/img/salle3.jpg'
 
 const Home = () => {
-  const fetchUrl = 'http://localhost:4000/admin/account/programmes-json'
-  const fetchUrlSalle = 'http://localhost:4000/admin/account/salles-json'
-
-  useEffect(() => {}, [])
-
   return (
     <Container>
       <div style={{ padding: '10px 0' }}></div>
-      <RowSalle fetchUrl={fetchUrlSalle} />
+      <RowSalle fetchUrl={request.fetchSalle} />
       <Wrapper>
         <Col>
           <div className='left'>
@@ -42,7 +39,7 @@ const Home = () => {
           </div>
         </Col>
       </Wrapper>
-      <Row title='Future Cinema' fetchUrl={fetchUrl} />
+      <Row title='Future Cinema' fetchUrl={request.fetchMovies} />
     </Container>
   )
 }

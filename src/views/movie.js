@@ -2,12 +2,12 @@
 import React from 'react'
 import Container from '../styles/Container'
 import Row from '../components/row'
+import request from '../services/requests'
 
 const Movie = () => {
-  let request = 'http://localhost:4000/admin/account/programmes-json'
   return (
     <Container>
-      <Row title='Future Cinéma' fetchUrl={request} />
+      <Row title='Future Cinéma' fetchUrl={request.fetchMovies} />
     </Container>
   )
 }

@@ -1,11 +1,10 @@
 // @ts-nocheck
 import React, { useState, useEffect } from 'react'
-import axios from 'axios'
 import PropTypes from 'prop-types'
+import axios from '../services/axios'
 // component
 import { Loader } from '../components/loader'
 // style
-
 import Swiper from 'swiper'
 import 'swiper/swiper-bundle.css'
 import Slide from './slide'

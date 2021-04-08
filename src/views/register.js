@@ -3,7 +3,8 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useHistory } from 'react-router-dom'
 // service
-import axios from 'axios'
+import axios from '../services/axios'
+import request from '../services/requests'
 // components
 import Register from '../components/signinOut/registerComponent'
 // image
@@ -63,7 +64,7 @@ const RegisterLogin = () => {
       }
 
       axios
-        .post('http://localhost:4000/admin/account/auth/client', data)
+        .post(request.fetchRegister, data)
         .then(res => {
           setMessageValidate('Votre compte a été bien crée')
           history.push({

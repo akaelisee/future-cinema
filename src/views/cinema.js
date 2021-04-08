@@ -3,12 +3,11 @@ import React from 'react'
 import Container from '../styles/Container'
 import RowSalle from '../components/rowSalle'
 import Wrapper from '../styles/Wrapper'
-
+import request from '../services/requests'
 const Cinema = () => {
-  const apiUrl = 'http://localhost:4000/admin/account/salles-json'
   return (
     <Container>
-      <RowSalle title='Salle' fetchUrl={apiUrl} />
+      <RowSalle title='Salle' fetchUrl={request.fetchSalle} />
       <Wrapper>
         <div className='wrapper__title'>
           <p>

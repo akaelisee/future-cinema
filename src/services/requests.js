@@ -1,18 +1,14 @@
 const Requests = {
-  fetchProducts: `api/products`,
-  fetchChains: `api/chains/`,
-  fetchRings: `api/rings/`,
-  fetchBracelets: `api/bracelets/`,
-  fetchWatches: `api/watches/`,
-  fetchNecklaces: `api/necklaces/`,
-  fetchRegister: `api/register/`,
-  fetchLogin: `api/login/`,
-  fetchContact: `api/add/contact/`,
-  fetchProductLimit: `api/products-eight/`,
-  fetchPayment: `api/payment`,
-  fetchNewletter: `api/subscribe/`,
-  fetchHer: `api/product/genre/her/`,
-  fetchHim: `api/product/genre/him/`
+  fetchSalle: `salles-json`,
+  fetchMovies: `programmes-json`,
+  fetchDetailSalle: `detail-salle-json`,
+  fetchLogin: `auth/client/login`,
+  fetchDetailProgramme: `detail-programme-json`,
+  fetchRegister: `auth/client`,
+  fetchContact: `contact`,
+  fetchReservation: `add-reservation-json`,
+  fetchPayment: `payment`,
+  fetchNewletter: `subscribe`
 }
 
 export default Requests

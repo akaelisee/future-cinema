@@ -2,7 +2,8 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react'
 // import axios from '../services/axios'
-import axios from 'axios'
+import axios from '../services/axios'
+import request from '../services/requests'
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js'
 import { LoaderPayement } from './loader'
 import StyleChekout from '../styles/StyleChekout'
@@ -66,7 +67,7 @@ const Checkout = ({
     try {
       // Got our client secret
       const paymentIntent = await axios.post(
-        'http://localhost:4000/admin/account/payment',
+        request.fetchPayment,
         {
           // @ts-ignore
           amount: totalPrice() * 100,
@@ -115,17 +116,15 @@ const Checkout = ({
       }, 2000)
 
       if (confirmPayment.paymentIntent.status == 'succeeded') {
-        let apiurl = 'http://localhost:4000/admin/account/add-reservation-json'
         const data = {
           id_client: client,
           id_program: programmeSelected.id,
           place_choisir: placeSelected.join('-')
         }
 
-        console.log(data)
         if (token) {
           axios
-            .post(apiurl, data, {
+            .post(request.fetchReservation, data, {
               headers: {
                 'auth-token': token
               }
