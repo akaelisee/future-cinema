@@ -1,7 +1,7 @@
 import Axios from 'axios'
 
 const instance = Axios.create({
-  baseURL: 'http://localhost:4000/admin/account/'
+  baseURL: 'https://futurecineback.akaelisee.fr/admin/account/'
 })
 
 export default instance

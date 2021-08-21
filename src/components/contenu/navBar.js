@@ -133,7 +133,7 @@ const NavBar = ({ login, isNav }) => {
       )
     }
   }
-  // manuelaaa@gmail.com
+
   return (
     <HeaderStyle>
       <div
@@ -143,7 +143,6 @@ const NavBar = ({ login, isNav }) => {
         }
       >
         <div className='screen'>
-          {/* {isNav ? 'elisee' : 'abel'} */}
           <div className='container_flex'>
             <div className='navbar_logo'>
               <div className='logo'>
@@ -226,7 +225,7 @@ const NavBar = ({ login, isNav }) => {
 }
 
 NavBar.propTypes = {
-  login: PropTypes.object,
+  login: PropTypes.any,
   isNav: PropTypes.bool
 }
 

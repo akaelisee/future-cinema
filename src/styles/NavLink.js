@@ -11,16 +11,6 @@ const PageLeft = keyframes`
   }
 `
 
-// const PageRight = keyframes`
-//   from {
-//     transform: translate(0%, 0%);
-//   }
-
-//   to {
-//     transform: translate(-100%, 0%);
-//   }
-// `
-
 const NavLink = styled.div`
   text-align: center;
   padding: 10px;
@@ -75,7 +65,7 @@ const NavLink = styled.div`
       `
     }
   }}
-
+  /* ici */
   @media screen and (max-width: 860px) {
     padding: 10px;
     position: fixed;

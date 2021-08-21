@@ -196,6 +196,7 @@ const Rows = styled.div`
     .rows__place {
       margin-left: 0px;
       margin-bottom: 80px;
+      width: 100%;
 
       .mult__option {
         width: 100%;

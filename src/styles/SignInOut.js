@@ -42,6 +42,7 @@ export const SignInOut = styled.div`
   }
 
   @media screen and (max-width: 500px) {
+    height: 100vh;
     .content_signOut {
       width: 340px !important;
       margin: 0 auto;
@@ -76,7 +77,7 @@ export const ContentImage = styled.div`
   @media screen and (max-width: 800px) {
     width: 100%;
   }
-  /* @media screen and (max-width: 700px) {
+  @media screen and (max-width: 700px) {
     display: none;
-  } */
+  }
 `

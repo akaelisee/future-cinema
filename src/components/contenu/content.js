@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { useHistory } from 'react-router-dom'
 import Header from './header'
 import Footer from './footer'
-import Newletter from '../newletter'
 // import Newletter from '../newletter'
 import styled from 'styled-components'
 const Content = ({ children }) => {
@@ -19,7 +18,7 @@ const Content = ({ children }) => {
         <Header />
         {children}
       </div>
-      <Newletter />
+      {/* <Newletter /> */}
       <Footer />
     </ContainerPage>
   )
