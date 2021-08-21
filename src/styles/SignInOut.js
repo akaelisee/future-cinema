@@ -42,7 +42,6 @@ export const SignInOut = styled.div`
   }
 
   @media screen and (max-width: 500px) {
-    height: 100vh;
     .content_signOut {
       width: 340px !important;
       margin: 0 auto;
@@ -64,6 +63,14 @@ export const SignInOut = styled.div`
           }
         }
       }
+    }
+    .clear {
+      height: calc(100vh - 580.133px);
+      background-color: #fff;
+    }
+    .clear-register {
+      height: calc(100vh - 633.133px);
+      background-color: #fff;
     }
   }
 `

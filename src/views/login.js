@@ -111,6 +111,7 @@ const Login = () => {
             </span>
           </div>
         </div>
+        <div className='clear'> </div>
       </div>
     </SignInOut>
   ) : (

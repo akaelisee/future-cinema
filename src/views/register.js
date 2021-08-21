@@ -128,6 +128,7 @@ const RegisterLogin = () => {
             </span>
           </div>
         </div>
+        <div className='clear-register'> </div>
       </div>
     </SignInOut>
   ) : (
