@@ -1,5 +1,5 @@
 {
-    "parser": "babel-eslint",
+    "parser": "@babel/eslint-parser",
     "plugins": ["prettier"],
     "extends": ["eslint:recommended", "plugin:react/recommended", "prettier"],
     "env": { "browser": true, "node": true, "jest": true },
@@ -27,5 +27,8 @@
           "react/no-unknown-property":1,
           "react/prop-types":1,
           "react/require-render-return":1
+    },
+    "parserOptions" : {
+      "requireConfigFile": false
     }
   }
