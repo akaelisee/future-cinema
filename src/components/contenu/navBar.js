@@ -118,7 +118,8 @@ const NavBar = ({ login, isNav }) => {
               <div className='nav__link'>
                 <span
                   onClick={() => {
-                    deconnexion(), setIsUser(false)
+                    deconnexion() 
+                    // setIsUser(false)
                   }}
                   className='btn-btn compte'
                 >
@@ -170,7 +171,8 @@ const NavBar = ({ login, isNav }) => {
               <div className='bar'>
                 <span
                   onClick={() => {
-                    setIsResponsive(true), setIsUser(false)
+                    setIsResponsive(true)
+                    //  setIsUser(false)
                   }}
                 >
                   <FontAwesomeIcon icon={faBars} />

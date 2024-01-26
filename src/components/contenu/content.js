@@ -11,7 +11,7 @@ const Content = ({ children }) => {
   useEffect(() => {
     const token = localStorage.getItem('token')
     if (!token) history.push('/')
-  }, [])
+  }, []);
   return (
     <ContainerPage>
       <div className='container__limit'>
