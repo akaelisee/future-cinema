@@ -114,8 +114,8 @@ const Programme = ({ login }) => {
           placeSold.indexOf(index + 1) !== -1
             ? content2
             : placeSelected.indexOf(index + 1) === -1
-            ? content1
-            : content
+              ? content1
+              : content
         }
       ></button>
     ))

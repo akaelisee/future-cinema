@@ -33,7 +33,8 @@ const StyleChekout = styled.div`
       position: relative;
       padding: 20px 30px;
       background-color: #fff;
-      box-shadow: rgba(0, 0, 0, 0.13) 0px 0.3rem 0.3rem 0px,
+      box-shadow:
+        rgba(0, 0, 0, 0.13) 0px 0.3rem 0.3rem 0px,
         rgba(0, 0, 0, 0.19) 0px 0.1rem 0.7rem 0px;
       .checkout__title {
         color: #000;
